@@ -2,8 +2,9 @@
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; 
+import "swiper/swiper.css"; 
 import React from "react";
+import Image from "next/image";
 
 
 
@@ -24,8 +25,8 @@ const slides = [
             className="w-full h-screen"
             >
             {slides.map((src, index) => (
-                <SwiperSlide key={index}>
-                    <img src={src} className="w-full h-full object-cover" alt={`Slide ${index + 1}`} />
+                <SwiperSlide key={index} className="relative">
+                    <Image src={src} fill className="object-cover" alt={`Slide ${index + 1}`} />
                 </SwiperSlide>
             ))}
         </Swiper>
